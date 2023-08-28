@@ -1,0 +1,26 @@
+<html>
+    <head>  
+
+        <title>Home</title>
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/home.css">
+
+        <script src="/js/csv-upload.js" defer></script>
+
+    </head>
+    <body>
+        <%- include('partials/navbar.ejs') %>
+
+        <header>Upload your CSV file and view it !</header>
+
+        <main>
+           <!-- csv uploader form-->
+            <%- include('partials/file-upload.ejs') %>
+           <!-- csv lists -->
+           <%- include('partials/csv-lists.ejs') %>
+        </main>
+        
+
+        <%- include('partials/footer.ejs')  %>
+    </body>
+</html>

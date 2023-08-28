@@ -1,0 +1,44 @@
+// csv displays
+
+.csv-data-wrapper{
+    width: 90%;
+    border: 2px solid red;
+    margin: 1rem auto;
+    overflow-x: scroll;
+    padding: 1rem;
+
+    table{
+        th,td{
+            padding: 5px 8px;
+        }
+        th{
+            background-color: #efefef;
+            white-space: nowrap;
+        }
+    }
+}
+
+
+// pagination
+.pagination{
+    padding: 5px 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    border: 1px solid red;
+    a{
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid black;
+      padding: 5px;
+      border-radius: 3px;
+  
+    }
+    .active{
+      border: 2px solid black;
+      padding: 5px;
+    }
+  }
+  

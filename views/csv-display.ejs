@@ -1,0 +1,54 @@
+<% console.log('id : ',id); %>
+<% console.log('headers: ',headers); %>
+<% console.log('records : '); %>
+<% console.log('total records: ',totalPages); %>
+<% console.log('current page: ',currentPage); %>
+<html>
+    <head>
+        <title>csv</title>
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/csv-display.css">
+    </head>
+    <body>
+
+        <%- include('partials/navbar.ejs')  %>
+
+        <main>
+            <!-- search -->
+
+
+            <!-- csv display -->
+            <div class="csv-data-wrapper">
+                <table>
+                    <tr>
+                        <% headers.forEach((header)=>{%>
+                            <th>
+                                <%= header  %>
+                            </th>
+                        <%}) %>
+                    </tr>
+                  
+                    <% records.forEach((record)=>{%>
+                        <tr>
+                        <% headers.forEach((header)=>{%>
+                            <td>
+                                <%= record[header]   %>
+                            </td>
+                        <%}) %>
+                    </tr>
+
+                    <%}) %>
+                  
+                </table>
+
+            </div>
+           <!-- pagination -->
+            <%- include('partials/pagination.ejs') %>
+        </main>
+
+        <%- include('partials/footer.ejs')  %>
+        
+    </body>
+</html>
+
+

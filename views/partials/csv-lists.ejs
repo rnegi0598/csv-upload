@@ -1,0 +1,19 @@
+
+<div class="csv-lists">
+      <% csvRecords.forEach((record,ind)=>{ %>
+        
+        <div class="csv-record">
+            <p class="name">
+                <%= record.originalname  %>
+            </p>
+            <p class="view">
+                <a href="/csv-data/<%=record._id%>?start=1">Open</a>
+            </p>
+            <p class="delete">
+                <a href="/delete/<%= record._id %>">Delete</a>
+            </p>
+
+        </div>
+
+     <% }) %>          
+</div>
