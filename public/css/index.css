@@ -1,24 +1,58 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+:root {
+  --black: #0b2026;
+  --darkblue: #40798c;
+  --blue: #7099a8;
+  --lightblue: #d0ebf4;
+}
+/* 
+#0b2026
+#40798c
+#7099a8
+#d0ebf4
+*/
+
+/* navbar */
+nav {
+  background-color: var(--black);
+  color: #fff;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+}
+nav a {
+  text-decoration: none;
+  color: inherit;
 }
 
-nav{
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: #eee;   
+/* main */
+main {
+  min-height: 100vh;
+  text-align: center;
 }
-nav p{
-    text-align: center;
-    font-size: 2rem;
-}
-main{
-    min-height: 100vh;
-    text-align: center;
 
+/* footer */
+footer {
+  background-color: var(--black);
+  color: #fff;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
 }
-footer{
-    text-align: center;
-    margin-top: 2rem;
+footer p {
+  margin: 5px;
+}
+footer a {
+  color: inherit;
+  font-weight: 700;
 }

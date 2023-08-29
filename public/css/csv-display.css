@@ -1,36 +1,68 @@
+.search-wrapper form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-wrapper form input, .search-wrapper form button {
+  outline: none;
+  border: none;
+  background-color: #DCDCDC;
+}
+.search-wrapper form input {
+  height: 40px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.search-wrapper form button {
+  height: 40px;
+  cursor: pointer;
+}
+
 .csv-data-wrapper {
   width: 90%;
-  border: 2px solid red;
+  border: 2px solid #efefef;
   margin: 1rem auto;
   overflow-x: scroll;
   padding: 1rem;
 }
-.csv-data-wrapper table th,
-.csv-data-wrapper table td {
-  padding: 5px 8px;
+.csv-data-wrapper table {
+  margin: auto;
 }
 .csv-data-wrapper table th {
-  background-color: #efefef;
+  background-color: var(--black);
+  padding: 15px 10px;
+  color: #fff;
   white-space: nowrap;
+  text-transform: uppercase;
+}
+.csv-data-wrapper table td {
+  padding: 8px 10px;
+  text-align: center;
+}
+.csv-data-wrapper table td:nth-child(odd) {
+  background-color: #efefef;
 }
 
 .pagination {
+  width: 90%;
   padding: 5px 10px;
-  margin: 10px 0;
+  margin: 10px auto;
   display: flex;
   justify-content: center;
   text-align: center;
   gap: 1rem;
-  border: 1px solid red;
 }
 .pagination a {
   text-decoration: none;
   color: inherit;
   border: 1px solid black;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: var(--black);
+  color: #fff;
 }
 .pagination .active {
   border: 2px solid black;
-  padding: 5px;
+  padding: 5px 10px;
 }/*# sourceMappingURL=csv-display.css.map */

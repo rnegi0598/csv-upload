@@ -1,44 +1,81 @@
+// search 
+
+.search-wrapper{
+
+  form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input,button{
+      outline: none;
+      border: none;
+      background-color: #DCDCDC;
+     
+
+    }
+    input{
+      height: 40px;
+      padding: 10px;
+      font-size: 1rem;
+      font-weight: 900;
+      
+    }
+    button{
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+}
 // csv displays
 
 .csv-data-wrapper {
   width: 90%;
-  border: 2px solid red;
+  border: 2px solid #efefef;
   margin: 1rem auto;
   overflow-x: scroll;
   padding: 1rem;
 
   table {
-    th,
-    td {
-      padding: 5px 8px;
-    }
+    margin: auto;
+    
     th {
-      background-color: #efefef;
+      background-color: var(--black);
+      padding: 15px 10px;
+      color: #fff;
       white-space: nowrap;
-      
+      text-transform: uppercase;
      
+    }
+    td{
+      padding: 8px 10px;
+      text-align: center;
+    }
+    td:nth-child(odd){
+      background-color: #efefef;
     }
   }
 }
 
 // pagination
 .pagination {
+  width: 90%;
   padding: 5px 10px;
-  margin: 10px 0;
+  margin: 10px auto;
   display: flex;
   justify-content: center;
   text-align: center;
   gap: 1rem;
-  border: 1px solid red;
   a {
     text-decoration: none;
     color: inherit;
     border: 1px solid black;
-    padding: 5px;
-    border-radius: 3px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--black);
+    color: #fff;
   }
   .active {
     border: 2px solid black;
-    padding: 5px;
+    padding: 5px 10px;
   }
 }
