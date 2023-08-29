@@ -25,3 +25,9 @@ Welcome to CSV Viewer, a web-based Node.js application that enables users to upl
     npm run dev
     ```
 ## Screenshots
+![Screenshot from 2023-08-29 15-00-08](https://github.com/rnegi0598/csv-upload/assets/45715802/9987cfac-fae5-4835-a2ba-582a26232b8e)
+
+
+![Screenshot from 2023-08-29 15-00-27](https://github.com/rnegi0598/csv-upload/assets/45715802/ac244c6a-da07-457d-abc4-603d6d333791)
+
+
