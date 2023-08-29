@@ -9,7 +9,6 @@ const index = async (req, res) => {
 };
 
 const uploadCSV = async (req, res) => {
-  console.log(req.file);
   const { originalname, path } = req.file;
   const csvRecord = new CSVRecord({
     originalname,
@@ -34,11 +33,9 @@ const displayCSV = async (req, res) => {
   const results = [];
   const fieldLabels = [];
   const searchText=req.query.searchText?.toLowerCase() ||"";
-  console.log(searchText);
   const { id } = req.params;
   const start  = Number(req.query.start) || 1;
   const csvRecord = await CSVRecord.findById(id);
-  // console.log(csvRecord);
   fs.createReadStream(csvRecord.path)
     .pipe(csv())
     .on("headers", (headers) => {
@@ -60,7 +57,6 @@ const displayCSV = async (req, res) => {
         }
         return found;
       })
-      console.log(filteredRecords.length);
       //pagination result
       const begin = (start - 1) * ITEMS_PER_PAGE;
       const end = start * ITEMS_PER_PAGE;
