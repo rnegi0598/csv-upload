@@ -1,7 +1,7 @@
 <div class="pagination">
     <!-- first page -->
     <% if(currentPage!==1 && currentPage!==2){%>
-            <a href="/csv-data/<%=id%>?start=1">1</a>
+            <a href="/csv-data/<%=id%>?searchText=<%=searchText%>&start=1">1</a>
     <%} %>
     <!-- dots -->
     <% if(currentPage >= 4){%>
@@ -9,13 +9,13 @@
     <%} %>
     <!-- previous page -->
     <% if(currentPage!=1){%>
-        <a href="/csv-data/<%=id%>?start=<%=currentPage-1%>"><%=currentPage-1%></a>
+        <a href="/csv-data/<%=id%>?searchText=<%=searchText%>&start=<%=currentPage-1%>"><%=currentPage-1%></a>
     <%} %>
     <!-- current page -->
     <span class="active"><%= currentPage %></span>
     <!-- next page -->
     <% if(currentPage!==totalPages){%>
-        <a href="/csv-data/<%=id%>?start=<%=currentPage+1%>"><%=currentPage+1%></a>
+        <a href="/csv-data/<%=id%>?searchText=<%=searchText%>&start=<%=currentPage+1%>"><%=currentPage+1%></a>
     <%} %>
     <!-- dots -->
     <% if(currentPage+3<=totalPages){%>
@@ -23,7 +23,7 @@
     <%} %>
     <!-- last page -->
     <% if(currentPage!=totalPages && currentPage!=totalPages-1){%>
-        <a href="/csv-data/<%=id%>?start=<%=totalPages%>"><%=totalPages%></a>
+        <a href="/csv-data/<%=id%>?searchText=<%=searchText%>&start=<%=totalPages%>"><%=totalPages%></a>
     <%} %>
 
 </div>

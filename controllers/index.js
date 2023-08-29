@@ -8,7 +8,7 @@ const index = async (req, res) => {
 };
 
 const uploadCSV = async (req, res) => {
-  console.log(req.file);
+  // console.log(req.file);
   const { originalname, path } = req.file;
   const csvRecord = new CSVRecord({
     originalname,
@@ -24,34 +24,51 @@ const deleteCSV = async (req, res) => {
 
   res.redirect("/");
 };
+
 const displayCSV = async (req, res) => {
   const ITEMS_PER_PAGE = 20;
   const results = [];
   const fieldLabels = [];
+  const searchText=req.query.searchText?.toLowerCase() ||"";
+  console.log(searchText);
   const { id } = req.params;
-  console.log("req query ", req.query);
-  const start  = Number(req.query.start);
+  const start  = Number(req.query.start) || 1;
   const csvRecord = await CSVRecord.findById(id);
-  console.log(csvRecord);
+  // console.log(csvRecord);
   fs.createReadStream(csvRecord.path)
     .pipe(csv())
     .on("headers", (headers) => {
-      fieldLabels.push(headers);
+      
+      fieldLabels.push(...headers);
+      
     })
     .on("data", (data) => results.push(data))
     .on("end", () => {
-      // console.log(results[0]);
+      const filteredRecords=results.filter((result)=>{
+      
+        
+        let found=false;
+        for(let i=0;i<fieldLabels.length;i++){
+          if(result[fieldLabels[i]]?.toLowerCase().includes(searchText)){
+            found=true;
+            break;
+          }
+        }
+        return found;
+      })
+      console.log(filteredRecords.length);
       //pagination result
       const begin = (start - 1) * ITEMS_PER_PAGE;
       const end = start * ITEMS_PER_PAGE;
-      const updatedRecords = results.slice(begin, end);
+      const updatedRecords = filteredRecords.slice(begin, end);
     
       res.render("csv-display", {
         id,
-        headers: [...fieldLabels[0]],
+        headers: [...fieldLabels],
         records: updatedRecords,
-        totalPages:Math.ceil(results.length/ITEMS_PER_PAGE),
+        totalPages:Math.ceil(filteredRecords.length/ITEMS_PER_PAGE),
         currentPage:start,
+        searchText,
       });
     });
 };

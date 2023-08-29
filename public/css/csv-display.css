@@ -5,7 +5,8 @@
   overflow-x: scroll;
   padding: 1rem;
 }
-.csv-data-wrapper table th, .csv-data-wrapper table td {
+.csv-data-wrapper table th,
+.csv-data-wrapper table td {
   padding: 5px 8px;
 }
 .csv-data-wrapper table th {

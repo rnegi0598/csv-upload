@@ -1,13 +1,11 @@
-<% console.log('id : ',id); %>
-<% console.log('headers: ',headers); %>
-<% console.log('records : '); %>
-<% console.log('total records: ',totalPages); %>
-<% console.log('current page: ',currentPage); %>
+
 <html>
     <head>
         <title>csv</title>
         <link rel="stylesheet" href="/css/index.css">
         <link rel="stylesheet" href="/css/csv-display.css">
+
+        <script src="/js/csv-display.js" defer></script>
     </head>
     <body>
 
@@ -15,7 +13,14 @@
 
         <main>
             <!-- search -->
-
+            <div class="search-wrapper">
+                <form action="/csv-data/<%= id %>" >
+                    <input type="text" name="searchText" >
+                    <button type="submit">
+                        <img src="/images/search-file.svg" alt="search icon">
+                    </button>
+                </form>
+            </div>
 
             <!-- csv display -->
             <div class="csv-data-wrapper">
