@@ -1,6 +1,6 @@
 const express=require('express');
 const bodyParser=require('body-parser');
-const indexRouter=require('./routes/index');
+const indexRouter=require('./routes/dataCSV');
 const dbConnect =require('./config/db');
 const app=express();
 
